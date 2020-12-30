@@ -20,7 +20,7 @@ public class Student {
 	@Column(name = "Student_name")
 	String name;
 
-	@OneToOne(cascade = javax.persistence.CascadeType.ALL)
+	@OneToOne(cascade = javax.persistence.CascadeType.ALL)//This is used for alter two tables that binds with foreign key
 	@JoinColumn(name = "course")
 	Course course;
 

@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+//We need to create this table manually through table create script
+
+
 @Entity
 @Table(name = "Course")
 public class Course {

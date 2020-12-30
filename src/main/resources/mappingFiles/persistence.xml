@@ -8,9 +8,18 @@
 			<property name="hibernate.connection.username">root</property>
 			<property name="hibernate.connection.password">adeptia</property>
 			<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/backend?useSSL=false</property>
+		 	<!-- 
+			create-Drop existing table and create new table
+			update-If table exist,update table else create new table
+			validate-If entity class column is equal or less then database columns
+			create-drop-Drop existing table and create new table and on session.close drop all table used this ddl operation is used for testing. 
+			--> 
 			<property name="hibernate.hbm2ddl.auto">update</property>
+			
+			<!--For display sql query during execution  -->
 			<property name="show_sql">true</property>
 			<property name="format_sql">true</property>
+			
 			<mapping class="oneToOne.Student"/>
 			<mapping class="oneToOne.Course"/>
 	</session-factory>
