@@ -14,13 +14,20 @@
 			validate-If entity class column is equal or less then database columns
 			create-drop-Drop existing table and create new table and on session.close drop all table used this ddl operation is used for testing. 
 			--> 
-			<property name="hibernate.hbm2ddl.auto">update</property>
+			<property name="hibernate.hbm2ddl.auto">create</property>
 			
 			<!--For display sql query during execution  -->
 			<property name="show_sql">true</property>
 			<property name="format_sql">true</property>
 			
-			<mapping class="oneToOne.Student"/>
-			<mapping class="oneToOne.Course"/>
+			<!--One To One mapping--> 
+			<!-- <mapping class="oneToOne.Student"/>
+			<mapping class="oneToOne.Course"/> --> 
+			
+			<!-- One to Many mapping -->
+			<mapping class="oneToMany.User"/>
+			<mapping class="oneToMany.Aadhar"/>
+			<mapping class="oneToMany.PanCard"/>
+			<mapping class="oneToMany.Role"/>
 	</session-factory>
 </hibernate-configuration>
