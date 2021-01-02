@@ -2,20 +2,21 @@ package oneToMany;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="Aadhar_Card")
+@Table(name = "Aadhar_Card")
 public class Aadhar {
 	@Id
 	int aadhar_id;
-	
+
 	public int getAadhar_id() {
 		return aadhar_id;
+	}
+
+	public Aadhar() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public Aadhar(int aadhar_id, String name, String address) {
@@ -46,9 +47,8 @@ public class Aadhar {
 
 	@Column
 	String name;
-	
+
 	@Column
 	String address;
-	
-	
+
 }

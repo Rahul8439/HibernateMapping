@@ -7,14 +7,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="User")
+@Table(name = "User")
 public class User {
 	public User(int user_id, String name, Aadhar aadhar, PanCard pan) {
 		this.user_id = user_id;
@@ -23,9 +21,13 @@ public class User {
 		this.pan = pan;
 	}
 
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Id
 	int user_id;
-	
+
 	public int getUser_id() {
 		return user_id;
 	}
@@ -66,17 +68,17 @@ public class User {
 		this.roleList = roleList;
 	}
 
-	@Column(name="user_name")
+	@Column(name = "user_name")
 	String name;
-	
+
 	@OneToOne(cascade = javax.persistence.CascadeType.ALL)
 	@JoinColumn(name = "aadhar_card")
 	Aadhar aadhar;
-	
+
 	@OneToOne(cascade = javax.persistence.CascadeType.ALL)
-	@JoinColumn(name="pan_card")
+	@JoinColumn(name = "pan_card")
 	PanCard pan;
-	
-	@OneToMany(mappedBy="user", cascade = {CascadeType.ALL})
+
+	@OneToMany(mappedBy = "user", cascade = { CascadeType.ALL })
 	List<Role> roleList;
 }

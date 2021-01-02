@@ -5,13 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="Pan_Card")
+@Table(name = "Pan_Card")
 public class PanCard {
 	@Id
 	int id;
-	
+
+	public PanCard() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -33,6 +36,6 @@ public class PanCard {
 		this.nameOnPanCard = nameOnPanCard;
 	}
 
-	@Column(name="name_on_pan_card")
+	@Column(name = "name_on_pan_card")
 	String nameOnPanCard;
 }

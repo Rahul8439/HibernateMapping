@@ -7,18 +7,21 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="Role")
+@Table(name = "Role")
 public class Role {
-	
+
 	@ManyToOne
-	@JoinColumn(name="user_id")
+	@JoinColumn(name = "user_id")
 	private User user;
-	
+
 	@Id
 	int role_id;
-	
+
+	public Role() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public User getUser() {
 		return user;
 	}
@@ -27,7 +30,6 @@ public class Role {
 		this.role_id = role_id;
 		this.name = name;
 	}
-
 
 	public void setUser(User user) {
 		this.user = user;
@@ -57,9 +59,9 @@ public class Role {
 		this.default_role = default_role;
 	}
 
-	@Column(name="role_name")
+	@Column(name = "role_name")
 	String name;
-	
-	@Column(name="default_role")
+
+	@Column(name = "default_role")
 	Boolean default_role;
 }
